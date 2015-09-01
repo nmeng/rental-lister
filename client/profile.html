@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Rental Matcher</title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="./js/matcher_controller.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript">
+      //check if user is allowed to be on this page, if not redirect to index
+      $.get("auth.json", function(resp){
+        console.log(resp);
+        if( resp.url ) window.location = resp.url;
+      });
+  $(document).ready(index_main);
+</script>
+  </head>
+  <body> 
+  <div id="top">FINALPROJECT399</div>
+  <main>
+  <p>Welcome! <button id="logout">Logout</button> </p>
+
+  <div class="tabs">
+    <button id="1" class="active">Profile</button>
+    <button id="2">Settings</button>
+  </div>
+
+   <div class="tab1 triad" id="profile">
+          <form action="">
+        <p>
+            <span class="inputlabel">Type: </span>
+            <select id="rentaltype" class="listen">
+            <option value=""></option>
+            <option value="apartment">Apartment</option>
+            <option value="condo">Condo</option>
+            <option value="house">House</option>
+            <option value="duplex">Duplex</option>
+            </select>
+        </p>
+        <p>
+          <span class="inputlabel">Location: </span> <input id="rentallocation" type="text" placeholder="city, state abbr" class="listen">
+        </p>
+        <p>
+            <span class="inputlabel">Rent: </span>
+            <select id="rentrange" class="listen">
+              <option value=""></option>
+              <option value="low">$0-$600</option>
+              <option value="medium">$601-$800</option>
+              <option value="high">$801-$1000</option>
+              <option value="nomax">$1001+</option>
+            </select>
+        </p>
+        <p>
+            <span class="inputlabel">Bed/Bath: </span> 
+            <select id="bed" class="listen">
+              <option value=""></option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3+</option>
+            </select>
+            /
+            <select id="bath" class="listen">
+              <option value=""></option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3+</option>
+            </select>
+        </p>
+        <p>
+          <p>
+            <span class="inputlabel">Amenities: </span>
+            <input type="checkbox" name="amenities" value="washerdryer"> Washer/Dryer 
+            <input type="checkbox" name="amenities" value="internet"> Internet 
+          </p>
+          <p>
+            <span class="inputlabel"></span>
+            <input type="checkbox" name="amenities" value="swimmingpool"> Swimming Pool
+            <input type="checkbox" name="amenities" value="pets"> Pets
+          </p>
+            <span class="inputlabel"></span>
+            <input type="checkbox" name="amenities" value="cable"> Cable
+            <input type="checkbox" name="amenities" value="view"> Views
+          </p>
+        </p>
+        </form>
+        <p class="center"> <button id="saveprofile">Save Profile</button> <button id="retrieveprofile">Retrieve Profile</button> <button id="match">Match</button> </p>
+        <span id="profileresult"></span>
+    </div>
+
+    <div class="tab2 hidden triad center" id="settings">
+    <p>Change User Password:</p>
+      <p><input id="currentpw" type="password" placeholder="current pw"></p>
+      <p><input id="newpw" type="password" placeholder="new pw"></p>
+      <p><button id="settings">Save Changes</button></p>
+      <span id="settingsresult"></span>
+    </div>
+</main>
+
+    <section id="result">
+        <h2><span id="results"> <- Start Your Search! </span></h2>
+    </section>
+
+  </body>
+</html>

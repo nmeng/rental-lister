@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+
+  <head>
+  <title>Rental Matcher</title>
+      <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+      <script src="/js/matcher_controller.js"></script>
+      <link rel="stylesheet" type="text/css" href="style.css">
+      <style type="text/css">
+      body{
+        background-image: url("http://i.imgur.com/ToLp9D2.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      </style>
+      <script type="text/javascript">
+        $(document).ready(index_main);
+      </script>
+  </head>
+  <body>
+  <div id="top">FINALPROJECT399</div>
+  <div align="center" id="index">
+  <p>An apartment/home rental search!</p> 
+  <div class="tabs">
+    <button id="1" class="active">Login</button>
+    <button id="2">Register</button>
+  </div>
+
+     <div class="tab1 login">
+        <p><span class="inputlabel">Login: </span>
+        <input id="old_name" type="text"></p>
+        <p><span class="inputlabel">Password: </span>
+        <input id="old_pass" type="password"></p>
+        <button id="login">Log In</button>
+        <p><span id="loginresult"></span></p>
+    </div>
+
+    <div class="tab2 hidden login">
+        <p><span class="inputlabel">Username: </span>
+        <input id="new_name" type="text"></p>
+        <p><span class="inputlabel">Password: </span>
+        <input id="new_pass" type="password"></p>
+        <p>
+        I am a:
+        <input type="radio" name="usertype" value="client">Renter
+        <input type="radio" name="usertype" value="provider">Property Owner
+        </p>
+        <button id="register">Register</button>
+        <p><span id="registerresult"></span></p>
+
+    </div>
+</div>
+  </body>
+</html>

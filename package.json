@@ -1,0 +1,10 @@
+{
+        "name": "finalproject",
+        "description": "FinalProject fro cis399",
+        "dependencies": {
+            "mongoose": "3.6.x",
+            "express": "3.4.x",
+            "connect": "*",
+            "bcrypt": "*"
+        }
+}
