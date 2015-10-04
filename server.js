@@ -7,7 +7,7 @@ var express = require("express"),
 	profile_handlers = require("./client/js/routes.js"),
     app = express();
 
-port = process.env.PORT || 8080;;
+port = process.env.PORT || 8080;
     http.createServer(app).listen(port);
     console.log("Express is listening on port " + port);
 
@@ -15,7 +15,7 @@ port = process.env.PORT || 8080;;
 app.use(express.static(__dirname + "/client"));
 
 // tell Express to parse incoming JSON objects
-app.use(bodyParser.urlencoded());  //this allows req.body; makes it easier to read
+app.use(bodyParser.urlencoded({extended:true}));  //this allows req.body; makes it easier to read
 
 var cookie_options = {};
 app.use(cookieParser('S3CRE7'));  //to be used if signing
